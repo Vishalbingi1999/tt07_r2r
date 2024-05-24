@@ -6,25 +6,25 @@ V {}
 S {}
 E {}
 N 380 -460 380 -410 {
-lab=#net1}
+lab=n0}
 N 380 -460 460 -460 {
-lab=#net1}
+lab=n0}
 N 290 -460 380 -460 {
-lab=#net1}
+lab=n0}
 N 280 -460 290 -460 {
-lab=#net1}
+lab=n0}
 N 580 -460 580 -410 {
-lab=#net2}
+lab=n1}
 N 580 -460 660 -460 {
-lab=#net2}
+lab=n1}
 N 520 -460 580 -460 {
-lab=#net2}
+lab=n1}
 N 780 -460 780 -410 {
-lab=#net3}
+lab=n0}
 N 780 -460 860 -460 {
-lab=#net3}
+lab=n0}
 N 720 -460 780 -460 {
-lab=#net3}
+lab=n0}
 N 1000 -460 1000 -410 {
 lab=out}
 N 920 -460 1000 -460 {
@@ -115,3 +115,6 @@ C {devices/ipin.sym} 560 -280 0 0 {name=p13 lab=b1}
 C {devices/ipin.sym} 980 -280 0 0 {name=p14 lab=b3}
 C {devices/ipin.sym} 140 -220 0 0 {name=p10 lab=VSUBS}
 C {devices/lab_pin.sym} 140 -220 2 0 {name=p19 lab=VSUBS}
+C {devices/lab_pin.sym} 360 -460 1 0 {name=p7 sig_type=std_logic lab=n0}
+C {devices/lab_pin.sym} 590 -460 1 0 {name=p15 sig_type=std_logic lab=n1}
+C {devices/lab_pin.sym} 800 -460 1 0 {name=p16 sig_type=std_logic lab=n2}
