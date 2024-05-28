@@ -1,12 +1,15 @@
 ** sch_path: /home/ttuser/tt07_r2r/xschem/testbench.sch
 **.subckt testbench
 x1 net1 GND GND b3 b1 b2 b0 r2r_4b
-R1 out net1 500 m=1
-C1 net1 GND 5p m=1
+R1 out net1 500R m=1
+C1 net1 GND 10p m=1
 V2 b3 GND pulse(1.8 0 0 0 0 8u 16u)
 V3 b2 GND pulse(1.8 0 0 0 0 4u 8u)
 V4 b1 GND pulse(1.8 0 0 0 0 2u 4u)
 V5 b0 GND pulse(1.8 0 0 0 0 1u 2u)
+x2 net2 GND GND b3 b1 b2 b0 r2r_4b_parax
+R2 out_parax net2 500R m=1
+C2 net2 GND 10p m=1
 **** begin user architecture code
 
 ** opencircuitdesign pdks install
@@ -38,15 +41,19 @@ write testbench.raw
 *.ipin b1
 *.ipin b3
 *.ipin VSUBS
-XR2 net1 GND VSUBS sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
-XR9 net2 net1 VSUBS sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
-XR1 net1 b0 VSUBS sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
-XR3 net3 net2 VSUBS sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
-XR4 net2 b1 VSUBS sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
-XR5 out net3 VSUBS sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
-XR6 net3 b2 VSUBS sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR2 n0 GND VSUBS sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR9 n1 n0 VSUBS sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR1 n0 b0 VSUBS sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR3 n2 n1 VSUBS sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR4 n1 b1 VSUBS sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR5 out n2 VSUBS sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR6 n2 b2 VSUBS sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
 XR7 out b3 VSUBS sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
 .ends
 
+
+* expanding   symbol:  r2r_4b_parax.sym # of pins=7
+** sym_path: /home/ttuser/tt07_r2r/xschem/r2r_4b.sym
+.include /home/ttuser/tt07_r2r/mag/r2r_4b.sim.spice
 .GLOBAL GND
 .end

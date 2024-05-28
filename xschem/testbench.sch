@@ -13,8 +13,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-4.2310721e-06
-x2=2.2187003e-05
+x1=0
+x2=1.6e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -35,14 +35,35 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-4.2310721e-06
-x2=2.2187003e-05
+x1=0
+x2=1.6e-05
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
 node=out
-color=7
+color=6
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 970 170 1770 570 {flags=graph
+y1=0
+y2=2
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=1.6e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=out_parax
+color=4
 dataset=-1
 unitx=1
 logx=0
@@ -76,6 +97,10 @@ N 110 -470 110 -450 {
 lab=b0}
 N 710 -140 790 -140 {
 lab=out}
+N 480 290 650 290 {
+lab=#net2}
+N 710 290 790 290 {
+lab=out_parax}
 C {devices/code.sym} 80 50 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -100,13 +125,13 @@ C {devices/lab_pin.sym} 180 -110 0 0 {name=p3 sig_type=std_logic lab=b2
 C {devices/lab_pin.sym} 180 -90 0 0 {name=p4 sig_type=std_logic lab=b3
 }
 C {devices/res.sym} 680 -140 1 0 {name=R1
-value=500
+value=500R
 footprint=1206
 device=resistor
 m=1}
 C {devices/capa.sym} 590 -110 0 0 {name=C1
 m=1
-value=5p
+value=10p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/gnd.sym} 590 -80 0 0 {name=l3 lab=GND}
@@ -136,3 +161,28 @@ write testbench.raw
 "}
 C {devices/gnd.sym} 480 -120 0 0 {name=l9 lab=GND}
 C {devices/gnd.sym} 480 -100 0 0 {name=l10 lab=GND}
+C {r2r_4b.sym} 330 310 0 0 {name=x2
+schematic=r2r_4b_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/r2r_4b.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/r2r_4b.sim.spice]"
+}
+C {devices/lab_pin.sym} 180 280 0 0 {name=p5 sig_type=std_logic lab=b0}
+C {devices/lab_pin.sym} 180 300 0 0 {name=p7 sig_type=std_logic lab=b1}
+C {devices/lab_pin.sym} 180 320 0 0 {name=p12 sig_type=std_logic lab=b2
+}
+C {devices/lab_pin.sym} 180 340 0 0 {name=p13 sig_type=std_logic lab=b3
+}
+C {devices/res.sym} 680 290 1 0 {name=R2
+value=500R
+footprint=1206
+device=resistor
+m=1}
+C {devices/capa.sym} 590 320 0 0 {name=C2
+m=1
+value=10p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/gnd.sym} 590 350 0 0 {name=l1 lab=GND}
+C {devices/lab_pin.sym} 790 290 2 0 {name=p14 sig_type=std_logic lab=out_parax}
+C {devices/gnd.sym} 480 310 0 0 {name=l2 lab=GND}
+C {devices/gnd.sym} 480 330 0 0 {name=l4 lab=GND}
