@@ -1283,10 +1283,10 @@ clk                                        |clk
 rst_n                                      |rst_n                                      
 uio_in[0]                                  |uio_in[0]                                  
 uio_in[1]                                  |uio_in[1]                                  
-ui_in[0]                                   |ui_in[0]                                   
-ui_in[1]                                   |ui_in[1]                                   
-ui_in[2]                                   |ui_in[2]                                   
 ui_in[3]                                   |ui_in[3]                                   
+ui_in[2]                                   |ui_in[2]                                   
+ui_in[1]                                   |ui_in[1]                                   
+ui_in[0]                                   |ui_in[0]                                   
 VPWR                                       |VPWR                                       
 ua[0]                                      |ua[0]                                      
 ena                                        |ena                                        

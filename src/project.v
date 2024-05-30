@@ -26,10 +26,7 @@ r2r_4b_dac_control r2r_4b_dac_control(
         .n_rst(rst_n),
         .ext_data(uio_in[0]),       // if this is high, then DAC data comes from ui_in[3:0]
         .load_divider(uio_in[1]),   // load value set on data to the clock divider
-        .data[0](ui_in[0]),               // connect to ui_in[3:0]
-	.data[1](ui_in[1]),
-	.data[2](ui_in[2]),
-	.data[3](ui_in[3]),
+        .data(ui_in[3:0]),               // connect to ui_in[3:0]
         .r2r_out(r2r_out),          // 4 bit out to the R2R DAC
         .VPWR(VPWR),
         .VGND(VGND)
